@@ -1,0 +1,24 @@
+<div class="row">
+
+  <div class="grid-8 grid-centered">
+    Wybierz rok powstania zdjęcia:
+    <select [(ngModel)]="value" (change)="onChange()">
+      <option>      </option>
+      <option> 2010 </option>
+      <option> 2011 </option>
+      <option> 2012 </option>
+      <option> 2013 </option>
+      <option> 2014 </option>
+      <option> 2015 </option>
+    </select>
+  </div>
+
+  <div class="grid-8 grid-centered">
+    Tutaj wpisz wyszukiwane hasło:
+    <input type="text" name="searchValue" [(ngModel)]="value" placeholder="Szukaj" (keyup)="onChange()" #reference>
+    <button id="przycisk" (click)="reference.value=' '">Wyczyść</button> <br/><br/>
+  </div>
+
+  <div>  <p align="left" *ngIf="galleries"> Ilość elementów:  {{(galleries|searchGalleries : value).length}} </p> <br/> <br/>
+  </div>
+</div>

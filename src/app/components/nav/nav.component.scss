@@ -1,0 +1,51 @@
+@import "../../../assets/styles/variables";
+
+:host {
+  display: block;
+  width: 100%;
+  background: #66CCFF;
+  color: #fff;
+  line-height: 0px;
+  border-bottom: 2px solid #FF0033;
+
+  .container {
+    padding-bottom: 0px;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    display:table-cell;
+    vertical-align:middle;
+  }
+
+  ul {
+    float: right;
+    font-family: Impact;
+    display:table-cell;
+
+
+    li {
+      display: inline-block;
+      line-height: $font-size-h1;
+      font-size: xx-large;
+      vertical-align:middle;
+
+
+      a {
+        display: block;
+        padding: 4px 10px;
+        color: red;
+
+        &.is-active {
+          color: #FFFF00;
+        }
+      }
+    }
+  }
+}
+
+#logo {
+  width:175px;
+  height:125px;
+}

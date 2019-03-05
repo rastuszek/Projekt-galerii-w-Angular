@@ -1,0 +1,26 @@
+<div> <br>
+
+  <h2> Galeria zwierzęcia: {{gallery.title}}</h2> <br> <br>
+
+  <p id="miejsce"> Miejsce występowania zwierzęcia i wykonania zdjęć: {{gallery.place}} </p> <br>
+
+  <p id="data"> Data wykonania zdjęć: {{gallery.dateCreated}} </p> <br> <br>
+
+  <div id="tag">
+    <span *ngFor="let photo of gallery.tags"> {{photo.tag}} </span> <br> <br>
+  </div>
+
+  <div class="row row-align-middle">
+  <a class="duze">
+    <img src={{photo.thumbUrl}}>
+  </a>
+  </div> <br>
+
+
+  <div class="row row-align-middle">
+      <div class="male" *ngFor="let photo of gallery.photos"> <img src="{{photo.thumbUrl}}" (click)="onClick(photo)"> <br>
+  </div>
+
+
+  </div>
+</div>

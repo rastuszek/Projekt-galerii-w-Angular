@@ -1,0 +1,27 @@
+
+<h1>
+ <br/> {{title}} <br/><br/>
+</h1>
+
+<h4>
+{{description}} <br/> <br/>
+</h4>
+
+<app-gallery-search [galleries]="galleries" *ngIf="galleries.length" (searchValue)="setSearchValue($event)"> </app-gallery-search>
+
+
+
+
+<div class="row row-align-middle" id="opis">
+  <app-gallery-item [gallery]="item" class="grid-5 grid-centered" *ngFor="let item of galleries | searchGalleries : searchValue;trackBy:item?.id"
+    (deleteGallery)="removeGallery($event)">
+  </app-gallery-item>
+</div>
+
+<div id="przyciski">
+  <button class="button" (click)="exportGalleries()">Wyślij galerię</button>
+  <button class="button" (click)="removeGalleries()">Usuń galerię</button>
+</div>
+
+
+

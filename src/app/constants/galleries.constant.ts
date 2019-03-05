@@ -1,0 +1,275 @@
+export const Galleries = [{
+  'place': 'Australia',
+  'galleryId': 'pierwsza',
+  'title': 'Zdradliwy smok',
+  'dateCreated': '2011-07-15',
+  'thumbUrl': './src/zdjecia/smok/smok.jpg',
+  'description': 'Gatunek jaszczurki żyjącej w Australii.',
+  'tags': [{
+    'tag': 'JASZCZURKA',
+  }, {
+    'tag': 'GAD',
+  }, {
+    'tag': 'SMOK'
+  }, {
+    'tag': 'DZIWAK'
+  }],
+  'photos': [{
+     'photoId': '1',
+     'thumbUrl': './src/zdjecia/smok/1.jpg',
+     'imgUrl': './src/zdjecia/smok/1.jpg',
+  }, {
+      'photoId': '2',
+      'thumbUrl': '/src/zdjecia/smok/2.jpg',
+      'imgUrl': '/src/zdjecia/smok/2.jpg',
+  }, {
+     'photoId': '3',
+     'thumbUrl': './src/zdjecia/smok/3.jpg',
+      'imgUrl': './src/zdjecia/smok/3.jpg',
+  }, {
+     'photoId': '4',
+     'thumbUrl': './src/zdjecia/smok/4.jpg',
+     'imgUrl': './src/zdjecia/smok/4.jpg',
+  }, {
+    'photoId': '5',
+    'thumbUrl': './src/zdjecia/smok/5.jpg',
+    'imgUrl': './src/zdjecia/smok/5.jpg',
+  }, {
+    'photoId': '6',
+    'thumbUrl': './src/zdjecia/smok/6.jpg',
+    'imgUrl': './src/zdjecia/smok/6.jpg',
+  }, {
+    'photoId': '7',
+    'thumbUrl': './src/zdjecia/smok/7.jpg',
+    'imgUrl': './src/zdjecia/smok/7.jpg',
+  }, {
+    'photoId': '8',
+    'thumbUrl': './src/zdjecia/smok/8.jpg',
+    'imgUrl': './src/zdjecia/smok/8.jpg',
+  }]
+}, {
+  'place': 'Wody umiarkowane i tropikalne',
+  'galleryId': 'druga',
+  'title': 'Błękitny smok',
+  'dateCreated': '2013-11-03',
+  'thumbUrl': './src/zdjecia/smoczek/smoczek.jpg',
+  'description': 'Gatunek jadowitego morskiego ślimaka.',
+  'tags': [{
+    'tag': 'WODNY',
+  }, {
+    'tag': 'KIJANKA',
+  }, {
+    'tag': 'SMOK'
+  }, {
+    'tag': 'PIĘKNY'
+  }],
+  'photos': [{
+    'photoId': '1',
+    'thumbUrl': './src/zdjecia/smoczek/1.jpg',
+    'imgUrl': './src/zdjecia/smoczek/1.jpg',
+  }, {
+    'photoId': '2',
+    'thumbUrl': './src/zdjecia/smoczek/2.jpg',
+    'imgUrl': './src/zdjecia/smoczek/2.jpg',
+  }, {
+    'photoId': '3',
+    'thumbUrl': './src/zdjecia/smoczek/3.jpg',
+    'imgUrl': './src/zdjecia/smoczek/3.jpg',
+  }, {
+    'photoId': '4',
+    'thumbUrl': './src/zdjecia/smoczek/4.jpg',
+    'imgUrl': './src/zdjecia/smoczek/4.jpg',
+  }, {
+    'photoId': '5',
+    'thumbUrl': './src/zdjecia/smoczek/5.jpg',
+    'imgUrl': './src/zdjecia/smoczek/5.jpg',
+  }, {
+    'photoId': '6',
+    'thumbUrl': './src/zdjecia/smoczek/6.jpg',
+    'imgUrl': './src/zdjecia/smoczek/6.jpg',
+  }, {
+    'photoId': '7',
+    'thumbUrl': './src/zdjecia/smoczek/7.jpg',
+    'imgUrl': './src/zdjecia/smoczek/7.jpg',
+  }]
+}, {
+  'place': 'Indie',
+  'galleryId': 'trzecia',
+  'title': 'Gawial gangesowy',
+  'dateCreated': '2010-04-08',
+  'thumbUrl': './src/zdjecia/gawial/gawial.jpg',
+  'description': 'Gatunek krokodyla z rodziny gawialowatych.',
+  'tags': [{
+    'tag': 'GAD',
+  }, {
+    'tag': 'PASZCZA',
+  }, {
+    'tag': 'STRASZNY'
+  }, {
+    'tag': 'KROKODYL'
+  }],
+  'photos': [{
+    'photoId': '1',
+    'thumbUrl': './src/zdjecia/gawial/1.jpg',
+    'imgUrl': './src/zdjecia/gawial/1.jpg',
+  }, {
+    'photoId': '2',
+    'thumbUrl': './src/zdjecia/gawial/2.jpg',
+    'imgUrl': './src/zdjecia/gawial/2.jpg',
+  }, {
+    'photoId': '3',
+    'thumbUrl': './src/zdjecia/gawial/3.jpg',
+    'imgUrl': './src/zdjecia/gawial/3.jpg',
+  }, {
+    'photoId': '4',
+    'thumbUrl': './src/zdjecia/gawial/4.jpg',
+    'imgUrl': './src/zdjecia/gawial/4.jpg',
+  }, {
+    'photoId': '5',
+    'thumbUrl': './src/zdjecia/gawial/5.jpg',
+    'imgUrl': './src/zdjecia/gawial/5.jpg',
+  }, {
+    'photoId': '6',
+    'thumbUrl': './src/zdjecia/gawial/6.jpg',
+    'imgUrl': './src/zdjecia/gawial/6.jpg',
+  }, {
+    'photoId': '7',
+    'thumbUrl': './src/zdjecia/gawial/7.jpg',
+    'imgUrl': './src/zdjecia/gawial/7.jpg',
+  }]
+}, {
+  'place': 'Madagaskar',
+  'galleryId': 'czwarta',
+  'title': 'Tenrek pręgowany',
+  'dateCreated': '2015-02-22',
+  'thumbUrl': './src/zdjecia/tenrek/tenrek.jpg',
+  'description': 'Gatunek ssaka owadożernego.',
+  'tags': [{
+    'tag': 'JEŻ',
+  }, {
+    'tag': 'GRYZOŃ',
+  }, {
+    'tag': 'LEŚNY'
+  }, {
+    'tag': 'SŁODKI'
+  }],
+  'photos': [{
+    'photoId': '1',
+    'thumbUrl': './src/zdjecia/tenrek/1.jpg',
+    'imgUrl': './src/zdjecia/tenrek/1.jpg',
+  }, {
+    'photoId': '2',
+    'thumbUrl': './src/zdjecia/tenrek/2.jpg',
+    'imgUrl': './src/zdjecia/tenrek/2.jpg',
+  }, {
+    'photoId': '3',
+    'thumbUrl': './src/zdjecia/tenrek/3.jpg',
+    'imgUrl': './src/zdjecia/tenrek/3.jpg',
+  }, {
+    'photoId': '4',
+    'thumbUrl': './src/zdjecia/tenrek/4.jpg',
+    'imgUrl': './src/zdjecia/tenrek/4.jpg',
+  }, {
+    'photoId': '5',
+    'thumbUrl': './src/zdjecia/tenrek/5.jpg',
+    'imgUrl': '../src/zdjecia/tenrek/5.jpg',
+  }, {
+    'photoId': '6',
+    'thumbUrl': './src/zdjecia/tenrek/6.jpg',
+    'imgUrl': './src/zdjecia/tenrek/6.jpg',
+  }, {
+    'photoId': '7',
+    'thumbUrl': './src/zdjecia/tenrek/7.jpg',
+    'imgUrl': './src/zdjecia/tenrek/7.jpg',
+  }]
+}, {
+  'place': 'Chiny',
+  'galleryId': 'piata',
+  'title': 'Rokselana',
+  'dateCreated': '2014-12-04',
+  'thumbUrl': './src/zdjecia/rokselana/rokselana.jpg',
+  'description': 'Rodzaj ssaka z rodziny koczkodanowatych.',
+  'tags': [{
+    'tag': 'SSAK',
+  }, {
+    'tag': 'MAŁPA',
+  }, {
+    'tag': 'LEśNY'
+  }, {
+    'tag': 'MAŁPISZON'
+  }],
+  'photos': [{
+    'photoId': '1',
+    'thumbUrl': './src/zdjecia/rokselana/1.jpg',
+    'imgUrl': './src/zdjecia/rokselana/1.jpg',
+  }, {
+    'photoId': '2',
+    'thumbUrl': './src/zdjecia/rokselana/2.jpg',
+    'imgUrl': './src/zdjecia/rokselana/2.jpg',
+  }, {
+    'photoId': '3',
+    'thumbUrl': './src/zdjecia/rokselana/3.jpg',
+    'imgUrl': './src/zdjecia/rokselana/3.jpg',
+  }, {
+    'photoId': '4',
+    'thumbUrl': './src/zdjecia/rokselana/4.jpg',
+    'imgUrl': './src/zdjecia/rokselana/4.jpg',
+  }, {
+    'photoId': '5',
+    'thumbUrl': './src/zdjecia/rokselana/5.jpg',
+    'imgUrl': './src/zdjecia/rokselana/5.jpg',
+  }, {
+    'photoId': '6',
+    'thumbUrl': './src/zdjecia/rokselana/6.jpg',
+    'imgUrl': './src/zdjecia/rokselana/6.jpg',
+  }, {
+    'photoId': '7',
+    'thumbUrl': './src/zdjecia/rokselana/7.jpg',
+    'imgUrl': './src/zdjecia/rokselana/7.jpg',
+  }]
+}, {
+  'place': 'Chile',
+  'galleryId': 'szosta',
+  'title': 'Mrówka panda',
+  'dateCreated': '2012-03-19',
+  'thumbUrl': './src/zdjecia/panda/panda.jpg',
+  'description': 'Gatunek nielotnej osy.',
+  'tags': [{
+    'tag': 'MRÓWKA',
+  }, {
+    'tag': 'OWAD',
+  }, {
+    'tag': 'LEŚNY'
+  }, {
+    'tag': 'MAŁA'
+  }],
+  'photos': [{
+    'photoId': '1',
+    'thumbUrl': './src/zdjecia/panda/1.jpg',
+    'imgUrl': './src/zdjecia/panda/1.jpg',
+  }, {
+    'photoId': '2',
+    'thumbUrl': './src/zdjecia/panda/2.jpg',
+    'imgUrl': './src/zdjecia/panda/2.jpg',
+  }, {
+    'photoId': '3',
+    'thumbUrl': './src/zdjecia/panda/3.jpg',
+    'imgUrl': './src/zdjecia/panda/3.jpg',
+  }, {
+    'photoId': '4',
+    'thumbUrl': './src/zdjecia/panda/4.jpg',
+    'imgUrl': './src/zdjecia/panda/4.jpg',
+  }, {
+    'photoId': '5',
+    'thumbUrl': './src/zdjecia/panda/5.jpg',
+    'imgUrl': './src/zdjecia/panda/5.jpg',
+  }, {
+    'photoId': '6',
+    'thumbUrl': './src/zdjecia/panda/6.jpg',
+    'imgUrl': './src/zdjecia/panda/6.jpg',
+  }, {
+    'photoId': '7',
+    'thumbUrl': './src/zdjecia/panda/7.jpg',
+    'imgUrl': './src/zdjecia/panda/7.jpg',
+  }]
+}];
