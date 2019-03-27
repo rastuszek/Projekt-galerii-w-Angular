@@ -3,9 +3,10 @@
   font-family: cursive;
 }
 
-#przyciski {
+#przyciskiduze {
   padding-left: 41%;
 }
+
 
 h1 {
   color: #191970;
@@ -14,14 +15,14 @@ h1 {
   text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
   0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
   0 0 40px #A5F1FF;
-  font-family: Palatino Linotype;
+  font-family: Palatino Linotype, serif;
   letter-spacing: 2px;
 }
 
 h4 {
   color: #0000CD;
   text-align: center;
-  font-family: Georgia;
+  font-family: Georgia, serif;
 }
 
 .button {
@@ -29,4 +30,11 @@ h4 {
   background-color: #f44336;
   color: white;
 }
+
+.przyciskistron {
+  font-size: 18px;
+  background-color: #f44336;
+  color: white;
+}
+
 

@@ -9,8 +9,6 @@ export class SearchGalleriesPipe implements PipeTransform {
 
 
   transform(value: any, args?: string): any {
-    console.log(value);
-    console.log(args);
 
       this.galleries = value;
 

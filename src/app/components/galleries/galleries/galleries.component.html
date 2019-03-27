@@ -13,15 +13,34 @@
 
 
 <div class="row row-align-middle" id="opis">
-  <app-gallery-item [gallery]="item" class="grid-5 grid-centered" *ngFor="let item of galleries | searchGalleries : searchValue;trackBy:item?.id"
+  <app-gallery-item [gallery]="item" class="grid-5 grid-centered" *ngFor="let item of galleries | searchGalleries : searchValue | slice:start:end; trackBy:item?.Id"
     (deleteGallery)="removeGallery($event)">
   </app-gallery-item>
 </div>
 
-<div id="przyciski">
+<div class="row" *ngIf="galleries" >
+
+
+  <div class="grid-16">
+
+    <span>
+      <button class="przyciskistron" (click)="setCurrentPage(currentPage - 1)"> Poprzednia</button></span>
+
+    <span  *ngFor="let item of numberOfPages; let i = index" >
+    <button class="przyciskistron" (click)="setCurrentPage(i)">{{i + 1}}</button></span>
+
+    <span>
+      <button  class="przyciskistron" (click)="setCurrentPage(currentPage + 1)"> Następna</button></span>
+
+  </div>
+</div>
+
+<div id=przyciskiduze>
   <button class="button" (click)="exportGalleries()">Wyślij galerię</button>
   <button class="button" (click)="removeGalleries()">Usuń galerię</button>
 </div>
+
+
 
 
 

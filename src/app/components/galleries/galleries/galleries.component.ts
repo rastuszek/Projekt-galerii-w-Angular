@@ -21,17 +21,27 @@ export class GalleriesComponent implements OnInit {
     })
   };
 
+  limit:number;
+  currentPage:number;
+  start:number;
+  end:number;
+  numberOfPages:any=[];
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.searchValue = '';
+    this.currentPage = parseInt(localStorage.getItem('galleryPage')) || 0;
+    this.setCurrentPage(this.currentPage);
+    this.setCurrentPage();
     this.title = 'Interesujące zwierzęta';
     this.description = 'Tutaj możemy znaleźć zdjęcia wielu ciekawych zwierząt!';
     this.http.get('http://project.usagi.pl/gallery',
       this.httpOptions).toPromise().then((response: IGallery[])=> {console.log('success', response);
       this.galleries = response;
+      this.numberOfPages = Array(Math.ceil(this.galleries.length / this.limit)).fill(1);
     }, (errResponse) => {console.log('error', errResponse);
     });
-    this.searchValue = '';
   }
 
   setSearchValue($event) {
@@ -45,6 +55,7 @@ export class GalleriesComponent implements OnInit {
       this.http.post('http://project.usagi.pl/gallery', gallery,
         this.httpOptions).toPromise().then((response: IGallery) => {console.log('success', response);
         this.galleries.push(response);
+        this.numberOfPages = Array(Math.ceil(this.galleries.length / this.limit)).fill(1);
       }, (errResponse) => {console.log('error', errResponse);
       });
     });
@@ -54,17 +65,28 @@ export class GalleriesComponent implements OnInit {
     this.galleries.forEach((gallery: IGallery) => {
       this.http.post('http://project.usagi.pl/gallery/delete/' + gallery.galleryId, {},
         this.httpOptions).toPromise().then((response) => {
+        this.numberOfPages = Array(Math.ceil(this.galleries.length / this.limit)).fill(1);
         this.galleries.splice(0, 1);console.log('success', response);}, (errResponse) => {console.log('error', errResponse);
-      });
+        });
     });
   }
 
   removeGallery(galleryId) {
     const index = this.galleries.findIndex((gallery: IGallery) => gallery.galleryId === galleryId);
     this.http.post('http://project.usagi.pl/gallery/delete/' + galleryId, {}, this.httpOptions).toPromise().then((response) => {
+      this.numberOfPages = Array(Math.ceil(this.galleries.length / this.limit)).fill(1);
       this.galleries.splice(index, 1);console.log('success', response);}, (errResponse) => {console.log('error', errResponse);
     });
   }
+
+  setCurrentPage(page = 0) {
+    this.limit = 3;
+    this.currentPage = page;
+    this.start = this.currentPage * this.limit;
+    this.end = this.start + 3;
+    localStorage.setItem('galleryPage', this.currentPage.toString());
+  }
+
 
 }
 
