@@ -1,0 +1,72 @@
+<form class="pola" #galleryForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <div>
+
+    <div>
+      <label><b>Tytuł galerii:</b></label>
+      <input type="text" class="input-control" name="title" #title="ngModel" [(ngModel)]="gallery.title" required>
+      <p class="text-danger" [hidden]="title.valid || title.pristine">Wymagane jest wpisanie tytułu galerii!</p>
+    </div><br>
+
+    <div>
+      <label>Ścieżka do miniaturki galerii:</label>
+      <input type="text" class="input-control" name="thumbUrl" #thumbUrl="ngModel" [(ngModel)]="gallery.thumbUrl" required>
+      <p class="text-danger" [hidden]="thumbUrl.valid || thumbUrl.pristine">Wymagane jest wpisanie ścieżki do miniaturki galerii! </p>
+    </div><br>
+    <div>
+      <label>Data wykonania zdjęć:</label>
+      <input type="text" class="input-control" name="dateCreated" #dateCreated="ngModel" [(ngModel)]="gallery.dateCreated" required>
+      <p class="text-danger" [hidden]="dateCreated.valid || dateCreated.pristine">Wymagane jest wpisanie daty!</p>
+    </div><br>
+    <div>
+      <label>Opis:</label>
+      <textarea class="input-control" name="description" #description="ngModel" [(ngModel)]="gallery.description" required></textarea>
+      <p class="text-danger" [hidden]="description.valid || description.pristine">Wymagane jest wpisanie opisu! </p>
+    </div><br>
+  </div>
+
+    <h4>Zdjęcia do galerii </h4> <br>
+
+    <div class="przycisk"> <button type="button" (click)="addPhoto()" class="button">Dodaj zdjęcie</button></div> <br>
+
+
+  <fieldset *ngFor="let photo of gallery.photos; let i = index">
+    <label>Ścieżka do zdjęcia:</label> <br> <br>
+    <div class="row">
+      <div class="grid-15 input-group">
+        <input type="text" class="input-control" name="thumbUrl{{i}}" #thumbUrl="ngModel" [(ngModel)]="photo.thumbUrl" required>
+        <p class="text-danger" [hidden]="thumbUrl.valid || thumbUrl.pristine">Wymagane podanie ścieżki do zdjęcia!</p>
+      </div>
+
+      <div class="row"><br>
+        <button type="button" (click)="removePhoto(i)" class="button button-small button-primary">
+          <i class="fa fa-remove"></i></button>
+      </div>
+
+    </div>
+
+  </fieldset>
+
+    <div><h4>Tagi </h4></div> <br>
+    <div class="przycisk"> <button type="button" (click)="addTag()" class="button">Dodaj tag</button></div><br>
+
+  <div *ngFor="let item of gallery.tags; let i = index">
+    <label>Nazwa tagu:</label> <br> <br>
+    <div class="row">
+    <div class="grid-15">
+
+    <input type="text" class="input-control" name="tags{{i}}" #tags="ngModel" [(ngModel)]="item.tag" required>
+    <p class="text-danger" [hidden]="tags.valid || tags.pristine">Wymagane wpisanie tagu!</p>
+    </div>
+
+      <button class="button button-small button-primary" (click)="removeTag(i)">
+        <i class="fa fa-remove"></i></button>
+
+    </div> <br>
+  </div>
+ <div class="przycisk">
+  <button class="button" [disabled]="!galleryForm.form.valid">Zapisz galerię</button>
+ </div>
+</form>
+
+

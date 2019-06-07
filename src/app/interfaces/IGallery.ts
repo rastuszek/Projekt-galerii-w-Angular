@@ -2,9 +2,9 @@ import {IPhoto} from './iphoto';
 
 
 export class IGallery {
-  galleryId: string;
+  galleryId?: string;
   title: string;
-  dateCreated: string;
+  dateCreated: any;
   thumbUrl: string;
   description: string;
   tags?: any;

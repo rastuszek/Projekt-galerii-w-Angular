@@ -3,44 +3,40 @@
  <br/> {{title}} <br/><br/>
 </h1>
 
-<h4>
-{{description}} <br/> <br/>
+<h4 *ngIf="!showGalleryForm"> {{description}} <br/> <br/>
 </h4>
 
-<app-gallery-search [galleries]="galleries" *ngIf="galleries.length" (searchValue)="setSearchValue($event)"> </app-gallery-search>
-
-
-
-
-<div class="row row-align-middle" id="opis">
-  <app-gallery-item [gallery]="item" class="grid-5 grid-centered" *ngFor="let item of galleries | searchGalleries : searchValue | slice:start:end; trackBy:item?.Id"
-    (deleteGallery)="removeGallery($event)">
-  </app-gallery-item>
+<div *ngIf="!showGalleryForm">
+<app-gallery-search [galleries]="galleries" *ngIf="galleries" (searchValue)="setSearchValue($event)"> </app-gallery-search>
 </div>
 
-<div class="row" *ngIf="galleries" >
-
-
-  <div class="grid-16">
-
-    <span>
-      <button class="przyciskistron" (click)="setCurrentPage(currentPage - 1)"> Poprzednia</button></span>
-
-    <span  *ngFor="let item of numberOfPages; let i = index" >
-    <button class="przyciskistron" (click)="setCurrentPage(i)">{{i + 1}}</button></span>
-
-    <span>
-      <button  class="przyciskistron" (click)="setCurrentPage(currentPage + 1)"> Następna</button></span>
-
-  </div>
+<div class="row row-align-middle" *ngIf="!showGalleryForm">
+<app-gallery-item id=opis [gallery]="item" class="grid-5 grid-centered"
+                  *ngFor="let item of galleries | searchGalleries : searchValue | paginate: { currentPage: currentPage, itemsPerPage: limit}"
+                  (deleteGallery)="removeGallery($event)">
+</app-gallery-item>
 </div>
 
-<div id=przyciskiduze>
+<div *ngIf="!showGalleryForm">
+<span id=zmiana>
+    <pagination-controls (pageChange)="currentPage= $event"> </pagination-controls> </span>
+  <span id=lol>  Strona {{currentPage}} z {{numberOfPages.length || 1 }} </span>
+</div>
+
+
+<div class="przyciskiduze" *ngIf="!showGalleryForm" >
   <button class="button" (click)="exportGalleries()">Wyślij galerię</button>
   <button class="button" (click)="removeGalleries()">Usuń galerię</button>
+  <button class="button" (click)="showGalleryForm=true">Dodaj galerię</button>
 </div>
 
 
-
+<div *ngIf="showGalleryForm">
+    <h4>Formularz dodawania nowej galerii</h4> <br>
+  <app-add-gallery-form (saveGallery)="saveGallery($event)"> </app-add-gallery-form>
+  <div class="wroc">
+  <button class="button" (click)="showGalleryForm=false" > Wróć </button>
+  </div>
+</div>
 
 

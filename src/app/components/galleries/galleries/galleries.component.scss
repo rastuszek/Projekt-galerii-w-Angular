@@ -3,8 +3,18 @@
   font-family: cursive;
 }
 
-#przyciskiduze {
-  padding-left: 41%;
+.przyciskiduze {
+   padding-left: 38%;
+
+}
+
+.wroc {
+  text-align: center;
+}
+
+.opis {
+  font-family: fantasy;
+  font-size: 15px;
 }
 
 
@@ -37,4 +47,12 @@ h4 {
   color: white;
 }
 
+#lol {
+  text-align: center;
+  float: right;
+}
 
+#zmiana {
+  text-align: center;
+  float:left;
+}

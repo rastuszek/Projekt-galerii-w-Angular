@@ -10,6 +10,12 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class GalleriesComponent implements OnInit {
 
+  showGalleryForm: boolean;
+  limit:number;
+  currentPage:number;
+  start:number;
+  end:number;
+  numberOfPages:any=[];
   title: string;
   description: string;
   galleries: IGallery[];
@@ -21,15 +27,13 @@ export class GalleriesComponent implements OnInit {
     })
   };
 
-  limit:number;
-  currentPage:number;
-  start:number;
-  end:number;
-  numberOfPages:any=[];
+
+
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.showGalleryForm = false;
     this.searchValue = '';
     this.currentPage = parseInt(localStorage.getItem('galleryPage')) || 0;
     this.setCurrentPage(this.currentPage);
@@ -43,6 +47,7 @@ export class GalleriesComponent implements OnInit {
     }, (errResponse) => {console.log('error', errResponse);
     });
   }
+
 
   setSearchValue($event) {
     console.log($event);
@@ -79,7 +84,7 @@ export class GalleriesComponent implements OnInit {
     });
   }
 
-  setCurrentPage(page = 0) {
+  setCurrentPage(page=1) {
     this.limit = 3;
     this.currentPage = page;
     this.start = this.currentPage * this.limit;
@@ -87,6 +92,14 @@ export class GalleriesComponent implements OnInit {
     localStorage.setItem('galleryPage', this.currentPage.toString());
   }
 
+  saveGallery(event) {
+    this.http.post('http://project.usagi.pl/gallery', event,
+      this.httpOptions).toPromise().then((response:IGallery) => {
+      this.galleries.push(response);
+      this.numberOfPages = Array(Math.ceil(this.galleries.length / this.limit)).fill(1);
+      this.showGalleryForm = false;
+    });
+  }
 
 }
 

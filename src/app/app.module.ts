@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { PolishDatePipe } from './pipes/polish-date.pipe';
@@ -13,6 +14,10 @@ import { GalleryItemComponent } from './components/galleries/gallery-item/galler
 import { GallerySearchComponent } from './components/galleries/gallery-search/gallery-search.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { GalleryComponent } from './components/galleries/gallery/gallery.component';
+import { CommentFormComponent } from './components/comments/comment-form/comment-form.component';
+import { CommentItemComponent } from './components/comments/comment-item/comment-item.component';
+import { AddGalleryFormComponent } from './components/add-gallery-form/add-gallery-form.component';
+
 
 @NgModule({
   declarations: [
@@ -24,9 +29,14 @@ import { GalleryComponent } from './components/galleries/gallery/gallery.compone
     GalleryItemComponent,
     GallerySearchComponent,
     DashboardComponent,
-    GalleryComponent
+    GalleryComponent,
+    CommentFormComponent,
+    CommentItemComponent,
+    AddGalleryFormComponent,
+
   ],
   imports: [
+    NgxPaginationModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
